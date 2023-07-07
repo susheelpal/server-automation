@@ -13,7 +13,7 @@ load = 1
 
 sts_connection_dev = boto3.client('sts')
 dev_account = sts_connection_dev.assume_role(
-    RoleArn="arn:aws:iam::441153016065:role/ec2_access_role",
+    RoleArn="arn:aws:iam::441153016065:role/ec2_access_role_dev",
     RoleSessionName="cross_acct_lambda_dev"
 )
 
@@ -23,7 +23,7 @@ DEV_SESSION_TOKEN = dev_account['Credentials']['SessionToken']
 
 sts_connection_qa = boto3.client('sts')
 qa_account = sts_connection_qa.assume_role(
-    RoleArn="arn:aws:iam::528102736060:role/ec2_access_role_QA",
+    RoleArn="arn:aws:iam::528102736060:role/ec2_access_role_qa",
     RoleSessionName="cross_acct_lambda_qa"
 )
 
